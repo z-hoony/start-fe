@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>문제소스</title>
+    <style>
+        .move_button {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #seeker {
+            width: 100px;
+            margin: 20px auto;
+        }
+
+        #total_count {
+            color: gray;
+        }
+
+        .count {
+            font-weight: bold;
+        }
+
+        .desc {
+            text-align: center;
+            width: 100px;
+            font-size: 14px;
+        }
+
+        .image {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .outer {
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #wrap {
+            width: 420px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrap"></div>
+<div id="seeker">
+    <img src="prev.png" id="prev" class="move_button" />
+    <span id="current_count" class="count">1</span>
+    <span id="total_count" class="count"> / 10</span>
+    <img src="next.png" id="next" class="move_button" />
+</div>
+
+<script src="quiz-1.js"></script>
+
+</body>
+</html>
