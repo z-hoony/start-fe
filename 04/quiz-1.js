@@ -10,11 +10,12 @@ var todayPhoto = [
 ];
 
 var currentIndex = 0;
+var numberOfRow = 3;
 
 function setPhotos(index) {
     var wrap = document.getElementById('wrap');
     var str = '';
-    for(var i = index * 3; (i < todayPhoto.length) && i < (index + 1) * 3; i++) {
+    for(var i = index * numberOfRow; (i < todayPhoto.length) && i < (index + 1) * numberOfRow; i++) {
         str += '<div class="outer"><img class="image" src="'+todayPhoto[i].img+'"><div class="desc">'+todayPhoto[i].title+'</div></div>';
     }
 
@@ -31,7 +32,7 @@ function setTotalPageCount(count) {
     totalCount.innerHTML = ' / ' + count
 }
 
-var totalCount = Math.ceil(todayPhoto.length / 3);
+var totalCount = Math.ceil(todayPhoto.length / numberOfRow);
 setPhotos(currentIndex);
 setPage(currentIndex);
 setTotalPageCount(totalCount);
