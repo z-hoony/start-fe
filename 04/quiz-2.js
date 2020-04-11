@@ -15,7 +15,7 @@ for(var i=0; i<numberOfRow; i++){
             color = 'white';
         }
 
-        point.setAttribute('id', baseID+(j + (i * 4)));
+        point.setAttribute('id', baseID+(j + (i * numberOfRow)));
         point.classList.add(color);
         board.appendChild(point);
     }
