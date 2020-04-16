@@ -49,12 +49,10 @@ function addBox() {
 // 문제 3
 function removeBox() {
     var $boxes = getAllBoxes();
-    if ($boxes.length > 0) {
-        var $lastBox = $boxes[$boxes.length - 1];
+    var $lastBox = $boxes.item($boxes.length - 1);
 
-        if ($lastBox) {
-            $lastBox.remove();
-        }
+    if ($lastBox) {
+        $lastBox.remove();
     }
 }
 
