@@ -67,12 +67,9 @@ function setTextToAllBoxes() {
 
 // 문제 5
 function removeAllBoxes() {
-    var $boxes = document.querySelectorAll('.' + boxClassName);
-
-    for (var i = 0; i < $boxes.length; i++) {
-        var $box = $boxes[i];
+    getAllBoxes().forEach(function($box) {
         $box.remove();
-    }
+    })
 }
 
 // 문제 6
