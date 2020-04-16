@@ -24,8 +24,7 @@ function getAllBoxes() {
 // 문제 1
 function addRedClassToAllBoxes() {
     getAllBoxes().forEach(function($box) {
-        var className = boxClassName + ' ' + redClassName;
-        $box.setAttribute('class', className);
+        $box.classList.add(redClassName);
     })
 }
 
