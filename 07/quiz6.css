@@ -1,0 +1,12 @@
+.wrap {
+    width: 800px;
+    margin: 0 auto;
+  }
+  input,
+  button {
+    padding: 10px;
+    font-size: 130%;
+  }
+  #result {
+    font-size: 150%;
+  }
