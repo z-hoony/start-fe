@@ -5,6 +5,7 @@ const $box = document.querySelector('.box');
 
 let currentScore = 0;
 let currentLife = parseInt($life.innerHTML);
+let intervalHandle = null;
 
 const pixel = 'px';
 
@@ -30,16 +31,22 @@ function changeBugPosition() {
     $bug.style.top = Math.random() * heightRange + pixel;
 }
 
+function resetBugInterval() {
+    if (intervalHandle) clearInterval(intervalHandle);
+    changeBugPosition();
+    intervalHandle = setInterval(changeBugPosition, 1000);
+}
+
 function bugClick(event) {
     updateScoreBy(1);
-    changeBugPosition();
+    resetBugInterval();
 
     event.stopPropagation();
 }
 
 function boxClick(event) {
     updateLifeBy(-1);
-    changeBugPosition();
+    resetBugInterval();
 }
 
 function addEventListeners() {
@@ -48,3 +55,4 @@ function addEventListeners() {
 }
 
 addEventListeners();
+resetBugInterval();
