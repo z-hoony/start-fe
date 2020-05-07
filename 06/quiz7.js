@@ -8,50 +8,51 @@ let currentLife = parseInt($life.innerHTML);
 let intervalHandle = null;
 
 const pixel = 'px';
+const bugSpeed = 1000;
 
 function updateScoreBy(num) {
-    currentScore += num;
-    $score.innerHTML = currentScore;
+  currentScore += num;
+  $score.innerHTML = currentScore;
 }
 
 function updateLifeBy(num) {
-    currentLife += num;
-    $life.innerHTML = currentLife;
+  currentLife += num;
+  $life.innerHTML = currentLife;
 
-    if (currentLife <= 0) {
-        alert('gameover');
-    }
+  if (currentLife <= 0) {
+    alert('gameover');
+  }
 }
 
 function changeBugPosition() {
-    const widthRange = $box.clientWidth - $bug.clientWidth;
-    const heightRange = $box.clientHeight - $bug.clientHeight;
+  const widthRange = $box.clientWidth - $bug.clientWidth;
+  const heightRange = $box.clientHeight - $bug.clientHeight;
 
-    $bug.style.left = Math.random() * widthRange + pixel;
-    $bug.style.top = Math.random() * heightRange + pixel;
+  $bug.style.left = Math.random() * widthRange + pixel;
+  $bug.style.top = Math.random() * heightRange + pixel;
 }
 
 function resetBugInterval() {
-    if (intervalHandle) clearInterval(intervalHandle);
-    changeBugPosition();
-    intervalHandle = setInterval(changeBugPosition, 1000);
+  if (intervalHandle) clearInterval(intervalHandle);
+  changeBugPosition();
+  intervalHandle = setInterval(changeBugPosition, bugSpeed);
 }
 
 function bugClick(event) {
-    updateScoreBy(1);
-    resetBugInterval();
+  updateScoreBy(1);
+  resetBugInterval();
 
-    event.stopPropagation();
+  event.stopPropagation();
 }
 
-function boxClick(event) {
-    updateLifeBy(-1);
-    resetBugInterval();
+function boxClick() {
+  updateLifeBy(-1);
+  resetBugInterval();
 }
 
 function addEventListeners() {
-    $bug.addEventListener('click', bugClick);
-    $box.addEventListener('click', boxClick);
+  $bug.addEventListener('click', bugClick);
+  $box.addEventListener('click', boxClick);
 }
 
 addEventListeners();
