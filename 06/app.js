@@ -5,30 +5,30 @@ c = 33;
 // b = 11;
 console.log(a, b);
 
-
 var str = 'aaaaaaa\n\
 dfsfsf';
 const s = `aaaa
 cccc
-ddd`
+ddd`;
 console.log(str, s);
 
-
 function sum(x, y = 1) {
-    return x + y;
+  return x + y;
 }
 
 console.log(sum(1));
 
 const arr = [1, 2, 3];
 
-const newArr = arr.map(item => item + 1);
+const newArr = arr.map((item) => item + 1);
 console.log(newArr);
 
-document.getElementById('box').addEventListener('click', event => console.log(1));
+document
+  .getElementById('box')
+  .addEventListener('click', (event) => console.log(1));
 
 function sum(x, y, z) {
-    return x, y, z;
+  return x, y, z;
 }
 
 const numbers = [1, 2, 3];

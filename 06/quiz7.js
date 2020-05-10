@@ -4,7 +4,7 @@ const $bug = document.querySelector('#bug');
 const $box = document.querySelector('.box');
 
 let currentScore = 0;
-let currentLife = parseInt($life.innerHTML);
+let currentLife = parseInt($life.innerHTML, 10);
 let intervalHandle = null;
 
 const pixel = 'px';
@@ -20,6 +20,7 @@ function updateLifeBy(num) {
   $life.innerHTML = currentLife;
 
   if (currentLife <= 0) {
+    // eslint-disable-next-line no-alert
     alert('gameover');
   }
 }

@@ -1,7 +1,7 @@
 const $boxes = document.querySelectorAll('.box');
 
 let $clickedBox = null;
-let clickedBoxOffset = { x: 0, y: 0 };
+const clickedBoxOffset = { x: 0, y: 0 };
 
 const pixel = 'px';
 
